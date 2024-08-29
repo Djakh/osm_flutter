@@ -14,8 +14,7 @@ class OldMainExample extends StatefulWidget {
   State<OldMainExample> createState() => _MainExampleState();
 }
 
-class _MainExampleState extends State<OldMainExample>
-    with OSMMixinObserver, TickerProviderStateMixin {
+class _MainExampleState extends State<OldMainExample> with OSMMixinObserver, TickerProviderStateMixin {
   late MapController controller;
   late GlobalKey<ScaffoldState> scaffoldKey;
   Key mapGlobalkey = UniqueKey();
@@ -33,8 +32,7 @@ class _MainExampleState extends State<OldMainExample>
   Timer? timer;
   int x = 0;
   late AnimationController animationController;
-  late Animation<double> animation =
-      Tween<double>(begin: 0, end: 2 * pi).animate(animationController);
+  late Animation<double> animation = Tween<double>(begin: 0, end: 2 * pi).animate(animationController);
   final ValueNotifier<int> mapRotate = ValueNotifier(0);
   @override
   void initState() {
@@ -353,8 +351,7 @@ class _MainExampleState extends State<OldMainExample>
           ),
           IconButton(
             onPressed: () async {
-              visibilityZoomNotifierActivation.value =
-                  !visibilityZoomNotifierActivation.value;
+              visibilityZoomNotifierActivation.value = !visibilityZoomNotifierActivation.value;
               zoomNotifierActivation.value = !zoomNotifierActivation.value;
             },
             icon: const Icon(Icons.zoom_out_map),
@@ -528,8 +525,7 @@ class _MainExampleState extends State<OldMainExample>
                     geoPoint.toMap().toString(),
                   ),
                   action: SnackBarAction(
-                    onPressed: () =>
-                        ScaffoldMessenger.of(context).hideCurrentSnackBar(),
+                    onPressed: () => ScaffoldMessenger.of(context).hideCurrentSnackBar(),
                     label: "hide",
                   ),
                 ),
@@ -732,8 +728,7 @@ class _MainExampleState extends State<OldMainExample>
           pointsRoad.first,
           pointsRoad.last,
           roadType: notifierRoadType.value,
-          intersectPoint:
-              pointsRoad.getRange(1, pointsRoad.length - 1).toList(),
+          intersectPoint: pointsRoad.getRange(1, pointsRoad.length - 1).toList(),
           roadOption: const RoadOption(
             roadWidth: 20,
             roadColor: Colors.red,
@@ -743,8 +738,7 @@ class _MainExampleState extends State<OldMainExample>
           ),
         );
         pointsRoad.clear();
-        debugPrint(
-            "app duration:${Duration(seconds: roadInformation.duration!.toInt()).inMinutes}");
+        debugPrint("app duration:${Duration(seconds: roadInformation.duration!.toInt()).inMinutes}");
         debugPrint("app distance:${roadInformation.distance}Km");
         debugPrint("app road:$roadInformation");
         final console = roadInformation.instructions
@@ -764,7 +758,7 @@ class _MainExampleState extends State<OldMainExample>
         // );
       });
     } on RoadException catch (e) {
-       if (!mounted) return;
+      if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(
@@ -826,14 +820,15 @@ class _MainExampleState extends State<OldMainExample>
       configs,
       commonRoadOption: const MultiRoadOption(
         roadColor: Colors.red,
+        roadType: RoadType.bike
       ),
     );
+    controller.moveTo(GeoPoint(latitude: 47.4834379430, longitude: 8.4638911095));
     debugPrint(listRoadInfo.toString());
   }
 
   Future<void> drawRoadManually() async {
-    const encoded =
-        "mfp_I__vpAqJ`@wUrCa\\dCgGig@{DwWq@cf@lG{m@bDiQrCkGqImHu@cY`CcP@sDb@e@hD_LjKkRt@InHpCD`F";
+    const encoded = "mfp_I__vpAqJ`@wUrCa\\dCgGig@{DwWq@cf@lG{m@bDiQrCkGqImHu@cY`CcP@sDb@e@hD_LjKkRt@InHpCD`F";
     final list = await encoded.toListGeo();
     await controller.drawRoadManually(
       list,

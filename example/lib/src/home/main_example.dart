@@ -39,8 +39,7 @@ class _MainState extends State<Main> with OSMMixinObserver {
   void initState() {
     super.initState();
     controller = MapController(
-      initPosition: 
-      GeoPoint(
+      initPosition: GeoPoint(
         latitude: 47.4358055,
         longitude: 8.4737324,
       ),
@@ -76,6 +75,7 @@ class _MainState extends State<Main> with OSMMixinObserver {
         //   //iconAnchor: IconAnchor(anchor: Anchor.top),
         // );
         //controller.removeMarker(lastGeoPoint.value!);
+
         await controller.addMarker(
           position,
           markerIcon: const MarkerIcon(
@@ -155,7 +155,6 @@ class _MainState extends State<Main> with OSMMixinObserver {
       }
     }
   }
-
 
   @override
   Widget build(BuildContext context) {

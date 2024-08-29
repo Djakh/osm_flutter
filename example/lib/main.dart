@@ -26,9 +26,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light(useMaterial3: true),
-      initialRoute: "/simple",
+      initialRoute: "/main_page",
       routes: {
-        "/home": (context) => const MainPageExample(),
+        "/main_page": (context) => const MainPageExample(),
         "/simple": (context) => Scaffold(
               appBar: AppBar(
                 title: const Text('simple'),
@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
               ),
             ),
         "/old-home": (context) => const OldMainExample(),
-        "/hook": (context) => const SimpleHookExample(),
+        "/home": (context) => const SimpleHookExample(),
         //"/adv-home": (ctx) => AdvandedMainExample(),
         // "/nav": (ctx) => MyHomeNavigationPage(
         //       map: Container(),
