@@ -247,11 +247,11 @@ final class WebOsmController with WebMixin implements IBaseOSMController {
   @override
   Future<void> addMarker(
     GeoPoint p, {
-    MarkerIcon? markerIcon,
+    Widget? markerIcon,
     double? angle,
     IconAnchor? iconAnchor,
   }) async {
-    print("Add marker is working");
+    print("sdsd");
     Widget? icon = markerIcon;
     if (icon == null) {
       icon = Icon(

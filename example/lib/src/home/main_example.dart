@@ -78,13 +78,10 @@ class _MainState extends State<Main> with OSMMixinObserver {
 
         await controller.addMarker(
           position,
-          markerIcon: const MarkerIcon(
-            icon: Icon(
-              Icons.person_pin,
-              color: Colors.red,
-              size: 32,
-            ),
-          ),
+          markerIcon: Container(
+              color: Colors.green,
+              padding: const EdgeInsets.all(8),
+              child: const MarkerIcon(icon: Icon(Icons.person_pin, color: Colors.red, size: 32))),
           //angle: userLocation.angle,
         );
       } else {

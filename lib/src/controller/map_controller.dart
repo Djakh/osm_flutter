@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_osm_interface/flutter_osm_interface.dart';
 import 'package:flutter_osm_plugin/src/controller/osm/osm_controller.dart';
 
@@ -495,13 +496,12 @@ class MapController extends BaseMapController {
 
   Future<void> addMarker(
     GeoPoint p, {
-    MarkerIcon? markerIcon,
+    Widget? markerIcon,
     double? angle,
     IconAnchor? iconAnchor,
   }) async {
     if (angle != null) {
-      assert(
-          angle >= 0 && angle <= 2 * pi, "angle should be between 0 and 2*pi");
+      assert(angle >= 0 && angle <= 2 * pi, "angle should be between 0 and 2*pi");
     }
     await osmBaseController.addMarker(
       p,
@@ -532,9 +532,7 @@ class MapController extends BaseMapController {
   /// centerMap
   ///
   /// this attribute to retrieve center location of the map
-  Future<GeoPoint> get centerMap async =>
-      await osmBaseController.getMapCenter();
+  Future<GeoPoint> get centerMap async => await osmBaseController.getMapCenter();
 
-  Future<List<GeoPoint>> get geopoints async =>
-      await osmBaseController.geoPoints();
+  Future<List<GeoPoint>> get geopoints async => await osmBaseController.geoPoints();
 }
