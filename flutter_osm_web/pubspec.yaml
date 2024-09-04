@@ -1,7 +1,7 @@
 name: flutter_osm_web
 description: flutter web interface for flutter osm contain web channel and web api
 version: 1.1.0
-homepage: https://github.com/liodali/osm_flutter
+homepage: https://github.com/Djakh/osm_flutter.git
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 environment:
@@ -19,9 +19,9 @@ dependencies:
   routing_client_dart: ^0.5.5
   flutter_osm_interface:
     git:
-      url: https://github.com/liodali/osm_flutter.git
+      url: https://github.com/Djakh/osm_flutter.git
       path: flutter_osm_interface
-      ref: 1.0.2
+      ref: teg_driver_version
 dev_dependencies:
   flutter_test:
     sdk: flutter
